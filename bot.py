@@ -46,9 +46,8 @@ def read_website(url: str) -> str:
     except Exception as e:
         return f"Ошибка чтения: {str(e)}"
 
-# Инициализация модели через официальную библиотеку
 model = genai.GenerativeModel(
-   model_name="gemini-1.5-flash",
+    model_name="gemini-2.5-flash",
     tools=[search_web, read_website],
     system_instruction="Ты — автономный исследовательский ИИ-агент. Используй поиск и чтение сайтов, чтобы отвечать на вопросы."
 )
