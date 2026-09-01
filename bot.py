@@ -8,9 +8,9 @@ from aiogram.filters import Command
 from googlesearch import search
 import trafilatura
 
-# --- НАСТРОЙКИ ---
-TELEGRAM_BOT_TOKEN = "8629901443:AAE2nCWgEmNbcjejsb3tfYGU06uad1KySVw"
-GEMINI_API_KEY = "AQ.Ab8RN6KB72ohHr8ulz3IsyyFGYrFbPbsLFLU5vV95Nh1ehRYJw"  # <--- Вставь сюда свой ключ от Google
+# --- НАСТРОЙКИ ИЗ ПЕРЕМЕННЫХ ОКРУЖЕНИЯ ---
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # -----------------
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN)
@@ -79,7 +79,7 @@ tools_declaration = [
 ]
 
 def call_gemini(contents):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
     headers = {"Content-Type": "application/json"}
     
     payload = {
