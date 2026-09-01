@@ -1,1 +1,5 @@
+aiogram
 google-generativeai
+googlesearch-python
+trafilatura
+requests
