@@ -1,0 +1,3 @@
+[phases.setup]
+name = "setup"
+cmds = ["pip install -r requirements.txt"]
