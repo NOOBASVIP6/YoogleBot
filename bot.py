@@ -47,7 +47,7 @@ def read_website(url: str) -> str:
         return f"Ошибка чтения: {str(e)}"
 
 model = genai.GenerativeModel(
-    model_name="gemini-2.5-flash",
+    model_name="gemini-3.6-flash",
     tools=[search_web, read_website],
     system_instruction="Ты — автономный исследовательский ИИ-агент. Используй поиск и чтение сайтов, чтобы отвечать на вопросы."
 )
